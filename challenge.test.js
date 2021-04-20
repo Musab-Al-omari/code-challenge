@@ -7,12 +7,22 @@ Write a function that accepts an array of strings. Return the longest string.
 
 const longestString = (arr) => {
     // Solution code here...
+
+
+    let newarray = []
+    newarray = arr.sort((a, b) => {
+        return b.length - a.length
+    });
+    return newarray[0]
+
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
-Write a function called isSimilar which takes two strings and returns true if they contain the same characters and false otherwise; if for example the two strings have the same characters and they are rearranged it will return true.
+Write a function called isSimilar which takes two strings and returns true if they contain 
+the same characters and false otherwise; if for example the two strings have the same characters and they 
+are rearranged it will return true.
 examples:
 
 isSimilar("form","from")
@@ -22,9 +32,26 @@ isSimilar("farm","from")
 isSimilar("cat","act")
 => true
 ------------------------------------------------------------------------------------------------ */
-
+// it works on my repil 
 const isSimilar = (arr) => {
     // Solution code here...
+    let newArray = []
+    arr.forEach(element => {
+        let array = element.split('')
+         let value = 0;
+        for (let i = 0; i < array.length; i++) {
+            value += array[i].charCodeAt(0)
+            //  console.log(i,value)
+        }
+        newArray.push(value)
+    });
+    // console.log(newArray)
+    if (newArray[0]===newArray[1]) {
+        return true
+    }else{
+        return false
+    }
+
 };
 
 /* ------------------------------------------------------------------------------------------------
